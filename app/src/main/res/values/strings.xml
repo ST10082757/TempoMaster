@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TempoMaster</string>
+    <string name="link">
+       Sign up with  <a href="https://www.gmail.com"> Gmail</a>
+    </string>
+    <string name="link2">
+       Already have an account  <a href="https://www.gmail.com"> Login</a>
+    </string>
+    <string name="Sign_up"> Sign-up </string>
+    <string name="link3">
+       Dont have an account?  <a href="https://www.gmail.com"> Sign up</a>
+    </string>
+</resources>
