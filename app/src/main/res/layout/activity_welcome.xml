@@ -20,10 +20,10 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="90dp"
-            android:textColor="@color/white"
             android:text="                       Hello User!
                                   -------Welcome to Tempo Master------
             Please select yout project category"
+            android:textColor="@color/white"
 
             />
 
@@ -34,10 +34,10 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="40dp"
             android:layout_marginRight="140dp"
-            android:text=""
-            android:paddingLeft="15dp"
+            android:background="@drawable/btncircular"
             android:drawableLeft="@drawable/work_on_computer_employee_software_engineer_programmer_svgrepo_com"
-            android:background="@drawable/btncircular"/>
+            android:paddingLeft="15dp"
+            android:text="" />
 
         <Button
             android:id="@+id/schoolbtn"
@@ -46,10 +46,10 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="-83dp"
             android:layout_marginRight="10dp"
-            android:text=""
-            android:paddingLeft="15dp"
+            android:background="@drawable/btncircular"
             android:drawableLeft="@drawable/school_svgrepo_com"
-            android:background="@drawable/btncircular"/>
+            android:paddingLeft="15dp"
+            android:text="" />
 
         <Button
             android:id="@+id/generalbtn"
@@ -58,10 +58,10 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="-82dp"
             android:layout_marginRight="-120dp"
-            android:text=""
-            android:paddingLeft="15dp"
+            android:background="@drawable/btncircular"
             android:drawableLeft="@drawable/productivity_ability_talent_productive_svgrepo_com"
-            android:background="@drawable/btncircular" />
+            android:paddingLeft="15dp"
+            android:text="" />
 
         <TextView
             android:id="@+id/txtworklbl"
@@ -100,9 +100,9 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="70dp"
-            android:textColor="@color/white"
             android:text="Tempo Master is a application built
-            to track projects progress to get the best of the application take let us know a bit about you" />
+            to track projects progress to get the best of the application take let us know a bit about you"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/btnNext"
@@ -113,7 +113,7 @@
             android:layout_marginTop="40dp"
             android:background="@drawable/roundbtnwhite"
             android:text="Next"
-            android:textColor="#F15A29"/>
+            android:textColor="#F15A29" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
