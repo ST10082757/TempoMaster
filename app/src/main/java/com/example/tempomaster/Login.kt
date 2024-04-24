@@ -25,10 +25,11 @@ class Login : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
 
-       // val backbtn = findViewById<Button>(R.id.btnBack)
-        binding.btnBack.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+        val backbtn = findViewById<Button>(R.id.btnBack)
+        backbtn.setOnClickListener {
+            val Intent = Intent(this, MainActivity::class.java)
+            startActivity(Intent)
+
         }
 
         binding.linkSignup.setOnClickListener {

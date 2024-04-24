@@ -48,7 +48,7 @@
             android:gravity="center"
             android:inputType="text"
             android:paddingLeft="10dp"
-            android:text="Username"
+            android:hint="Username"
             android:textColor="@android:color/white" />
 
         <EditText
@@ -63,7 +63,7 @@
             android:gravity="center"
             android:inputType="text"
             android:paddingLeft="10dp"
-            android:text="Password"
+            android:hint="Password"
             android:textColor="@android:color/white" />
 
         <TextView
