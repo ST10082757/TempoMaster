@@ -95,14 +95,14 @@
 
         <TextView
             android:id="@+id/txtIntro"
-            android:layout_width="220dp"
+            android:layout_width="242dp"
             android:layout_height="70dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="70dp"
-            android:textColor="@color/white"
             android:text="Tempo Master is a application built
-            to track projects progress to get the best of the application take let us know a bit about you" />
+            to track projects progress to get the best of the application take let us know a bit about you"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/btnNext"
