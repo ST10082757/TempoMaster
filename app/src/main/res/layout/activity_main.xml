@@ -33,6 +33,7 @@
             android:fontFamily="@font/jomolhari"
             android:textColor="@android:color/white" />
 
+
         <Button
             android:id="@+id/btn_login"
             android:layout_width="130dp"
@@ -43,7 +44,7 @@
             android:text="Login"
             android:fontFamily="@font/jomolhari"
             android:textColor="@android:color/white" />
-
+      
         <TextView
             android:id="@+id/linkSignup"
             android:layout_width="160dp"
