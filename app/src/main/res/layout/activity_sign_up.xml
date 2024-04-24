@@ -79,22 +79,23 @@
             android:paddingLeft="10dp"/>
 
 
-
         <EditText
             android:id="@+id/txtPassword"
             android:layout_width="230dp"
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
-            android:ems="10"
-            android:inputType="text"
-            android:gravity="center"
             android:layout_marginTop="20dp"
+            android:background="@drawable/round_btn"
             android:background="@color/orangelight"
             android:textColor="@color/white"
             android:drawableLeft="@drawable/password_account_security_reset_safety_svgrepo_com"
-            android:paddingLeft="10dp"
+            android:ems="10"
+            android:gravity="center"
             android:hint="Password"
-            app:passwordToggleEnabled = "true"/>
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:textColor="@android:color/white"
+            app:passwordToggleEnabled="false" />
 
 
         <EditText
@@ -102,16 +103,18 @@
             android:layout_width="230dp"
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
-            android:ems="10"
-            android:inputType="text"
-            android:gravity="center"
             android:layout_marginTop="20dp"
+            android:background="@drawable/round_btn"
             android:background="@color/orangelight"
             android:textColor="@android:color/white"
             android:drawableLeft="@drawable/password_account_security_reset_safety_svgrepo_com"
-            android:paddingLeft="10dp"
+            android:ems="10"
+            android:gravity="center"
             android:hint="Confirm Password"
-            app:passwordToggleEnabled = "true"/>
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:textColor="@android:color/white"
+            app:passwordToggleEnabled="true" />
 
 
         <Button
@@ -143,7 +146,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
-            android:text="@string/link2"
+            android:text="Already have an account? Login"
             android:textColor="@android:color/white"/>
 
     </LinearLayout>
