@@ -8,4 +8,3 @@
     android:orientation="vertical"
     android:background="@color/backgroundgray"
     tools:context=".AddProject">
-</LinearLayout>
