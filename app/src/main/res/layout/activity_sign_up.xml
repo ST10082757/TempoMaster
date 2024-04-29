@@ -85,16 +85,14 @@
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:background="@drawable/round_btn"
             android:background="@color/orangelight"
-            android:textColor="@color/white"
             android:drawableLeft="@drawable/password_account_security_reset_safety_svgrepo_com"
             android:ems="10"
             android:gravity="center"
             android:hint="Password"
             android:inputType="text"
             android:paddingLeft="10dp"
-            android:textColor="@android:color/white"
+            android:textColor="@color/white"
             app:passwordToggleEnabled="false" />
 
 
@@ -105,8 +103,6 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             android:background="@drawable/round_btn"
-            android:background="@color/orangelight"
-            android:textColor="@android:color/white"
             android:drawableLeft="@drawable/password_account_security_reset_safety_svgrepo_com"
             android:ems="10"
             android:gravity="center"

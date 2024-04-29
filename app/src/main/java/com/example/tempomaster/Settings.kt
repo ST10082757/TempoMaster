@@ -1,13 +1,14 @@
 package com.example.tempomaster
 
 import android.os.Bundle
+import android.view.Menu
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.fragment.app.Fragment
 import com.example.tempomaster.databinding.ActivitySettingsBinding
+
 
 class Settings : AppCompatActivity() {
     // Declaration of the binding variable at the class level
