@@ -47,6 +47,8 @@
             android:layout_marginEnd="140dp"
             android:background="@drawable/btncircular"
             android:drawableStart="@drawable/work_on_computer_employee_software_engineer_programmer_svgrepo_com"
+            android:padding="15dp"
+            android:contentDescription="@string/Work"
             android:padding="15dp" />
 
         <Button
@@ -59,7 +61,8 @@
             android:background="@drawable/btncircular"
             android:backgroundTint="#E39D87"
             android:drawableStart="@drawable/school_svgrepo_com"
-            android:padding="15dp" />
+            android:padding="15dp"
+            android:contentDescription="@string/School"/>
 
         <Button
             android:id="@+id/generalbtn"
@@ -71,7 +74,8 @@
             android:background="@drawable/btncircular"
             android:backgroundTint="#E39D87"
             android:drawableStart="@drawable/productivity_ability_talent_productive_svgrepo_com"
-            android:padding="15dp" />
+            android:padding="15dp"
+            android:contentDescription="@string/General"/>
 
         <TextView
             android:id="@+id/txtworklbl"
@@ -122,8 +126,8 @@
 
         <Button
             android:id="@+id/btnNext"
-            android:layout_width="80dp"
-            android:layout_height="40dp"
+            android:layout_width="124dp"
+            android:layout_height="62dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginStart="0dp"
             android:layout_marginTop="40dp"
