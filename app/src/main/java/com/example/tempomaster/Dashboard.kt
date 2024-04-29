@@ -22,8 +22,6 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
         //using dataBinding to inflate the activity dashboard on the screen
         val binding = ActivityDashboardBinding.inflate(layoutInflater)
 
-        enableEdgeToEdge()
-
         //adding the functionality when user clicks something
         binding.btnwork.setOnClickListener(this)
         binding.btnschool.setOnClickListener(this)
