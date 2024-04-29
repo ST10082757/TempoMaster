@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Dark_Grey">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Game"
+        android:layout_gravity="center_horizontal"
+        android:textSize="35dp"
+        android:textColor="@color/white"
+        />
+    <!-- res/layout/fragment_game.xml -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Color palette at the top for choosing colors -->
+        <LinearLayout
+            android:id="@+id/color_palette"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <!-- unlocked colors -->
+            <Button
+                android:id="@+id/btn_red"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="#FF0000"/>
+
+            <Button
+                android:id="@+id/btn_green"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="#00FF00"/>
+
+            <Button
+                android:id="@+id/btn_blue"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="#0000FF"/>
+
+        </LinearLayout>
+
+        <!-- Custom view for drawing -->
+        <com.example.tempomaster.DrawingView
+            android:id="@+id/drawing_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:src="@tools:sample/avatars" />
+
+    </LinearLayout>
+
+
+</FrameLayout>
