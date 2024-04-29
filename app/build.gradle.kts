@@ -7,6 +7,7 @@ plugins {
 android {
     namespace = "com.example.tempomaster"
     compileSdk = 34
+    viewBinding.enable = true
 
     defaultConfig {
         applicationId = "com.example.tempomaster"
