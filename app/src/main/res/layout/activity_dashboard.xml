@@ -20,114 +20,130 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"
             android:gravity="center"
-            android:text="Dashboard"
+            android:text="@string/Dashboard"
             android:textColor="@color/white"
             android:textSize="30sp" />
 
         <TextView
             android:id="@+id/continueprojecttxt"
-            android:layout_width="110dp"
+            android:layout_width="142dp"
             android:layout_height="20dp"
             android:layout_gravity="center"
             android:layout_marginStart="-100dp"
             android:layout_marginTop="20dp"
-            android:text="Continue Project"
-            android:textColor="@android:color/white" />
+            android:text="@string/Continue"
+            android:textColor="@android:color/white"
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/txtaddnewproject"
-            android:layout_width="110dp"
+            android:layout_width="142dp"
             android:layout_height="20dp"
             android:layout_gravity="center"
             android:layout_marginStart="100dp"
             android:layout_marginTop="-20dp"
-            android:text="Add new project"
-            android:textColor="@android:color/white" />
+            android:text="@string/Add"
+            android:textColor="@android:color/white"
+            android:textSize="16dp" />
 
         <androidx.cardview.widget.CardView
-            android:layout_width="154dp"
-            android:layout_height="140dp"
+            android:layout_width="190dp"
+            android:layout_height="190dp"
             android:layout_gravity="center"
             android:layout_marginStart="-100dp"
             android:layout_marginTop="10dp"
             app:cardBackgroundColor="@color/black"
-            app:cardCornerRadius="15dp"
+            app:cardCornerRadius="15dp" >
 
-            />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
 
-        <Button
-            android:id="@+id/btnwork"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="-100dp"
-            android:layout_marginTop="-125dp"
-            android:background="@drawable/roundbtnwhite"
-            android:text="Work"
-            android:textColor="@color/black" />
+                <!-- Work Button -->
+                <Button
+                    android:id="@+id/btnwork"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/roundbtnwhite"
+                    android:text="@string/Work"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:layout_marginTop="10dp"/>
 
-        <Button
-            android:id="@+id/btnschool"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="-100dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/roundbtnwhite"
-            android:text="School"
-            android:textColor="@color/black" />
+                <!-- School Button -->
+                <Button
+                    android:id="@+id/btnschool"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/roundbtnwhite"
+                    android:text="@string/School"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:layout_marginTop="10dp"/>
 
-        <Button
-            android:id="@+id/btngeneral"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="-100dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/roundbtnwhite"
-            android:text="General"
-            android:textColor="@color/black" />
+                <!-- General Button -->
+                <Button
+                    android:id="@+id/btngeneral"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/roundbtnwhite"
+                    android:text="@string/General"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:layout_marginTop="10dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="154dp"
-            android:layout_height="140dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="-131dp"
+            android:id="@+id/cardViewLogoButtons"
+            android:layout_width="180dp"
+            android:layout_height="190dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="-190dp"
             app:cardBackgroundColor="@color/black"
-            app:cardCornerRadius="15dp" />
+            app:cardCornerRadius="15dp">
 
-        <Button
-            android:id="@+id/btnworklogo"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="-135dp"
-            android:layout_marginEnd="-60dp"
-            android:background="@drawable/btncircular"
-            android:drawableStart="@drawable/work_on_computer_employee_software_engineer_programmer_svgrepo_com" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
 
-        <Button
-            android:id="@+id/btnschoolLogo"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="-56dp"
-            android:layout_marginEnd="-140dp"
-            android:background="@drawable/btncircular"
-            android:drawableStart="@drawable/school_svgrepo_com" />
+                <!-- Work Logo Button -->
+                <Button
+                    android:id="@+id/btnworklogo"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/btncircular"
+                    android:contentDescription="@string/Work"
+                    android:drawableStart="@drawable/work_on_computer_employee_software_engineer_programmer_svgrepo_com" />
 
-        <Button
-            android:id="@+id/btngeneralLogo"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="-95dp"
-            android:background="@drawable/btncircular"
-            android:drawableStart="@drawable/productivity_ability_talent_productive_svgrepo_com"
-            android:paddingStart="2dp"
-            android:paddingEnd="2dp"/>
+                <!-- School Logo Button -->
+                <Button
+                    android:id="@+id/btnschoolLogo"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/btncircular"
+                    android:contentDescription="@string/School"
+                    android:drawableStart="@drawable/school_svgrepo_com" />
+
+                <!-- General Logo Button -->
+                <Button
+                    android:id="@+id/btngeneralLogo"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/btncircular"
+                    android:contentDescription="@string/General"
+                    android:drawableStart="@drawable/productivity_ability_talent_productive_svgrepo_com"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/textView12"
@@ -136,7 +152,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"
             android:gravity="center"
-            android:text="Recent Project"
+            android:text="@string/Recent"
             android:textColor="@color/white"
             android:textSize="30sp" />
 
@@ -150,16 +166,16 @@
 
             <EditText
                 android:id="@+id/txtProjectTimeSpent"
-                android:layout_width="120dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="70dp"
                 android:layout_marginTop="-60dp"
                 android:fontFamily="@font/inria_serif_light"
-                android:hint="Enter time spent"
-                android:textColorHint="@color/orangelight"
+                android:hint="@string/Hint2"
                 android:textColor="@android:color/white"
-                android:textSize="12sp" />
+                android:textColorHint="@color/orangelight"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/txtProjectTimeLeft"
@@ -167,12 +183,12 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="70dp"
-                android:layout_marginTop="-20dp"
+                android:layout_marginTop="-25dp"
                 android:fontFamily="@font/inria_serif_light"
-                android:hint="Enter time left"
-                android:textColorHint="@color/orangelight"
+                android:hint="@string/Hint3"
                 android:textColor="@android:color/white"
-                android:textSize="12sp"  />
+                android:textColorHint="@color/orangelight"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/txtProjectName"
@@ -180,12 +196,12 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="70dp"
-                android:layout_marginTop="-90dp"
+                android:layout_marginTop="-95dp"
                 android:fontFamily="@font/inria_serif_light"
-                android:hint="Enter project name"
-                android:textColorHint="@color/orangelight"
+                android:hint="@string/Hint1"
                 android:textColor="@android:color/white"
-                android:textSize="12sp"  />
+                android:textColorHint="@color/orangelight"
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="100dp"
@@ -193,7 +209,7 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="-80dp"
                 android:layout_marginTop="-100dp"
-                android:text="Project name"
+                android:text="@string/Name"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -203,57 +219,32 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="-70dp"
                 android:layout_marginTop="-60dp"
-                android:text="Total time spent"
+                android:text="@string/TimeSpent"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/textView13"
-                android:layout_width="120dp"
-                android:layout_height="20dp"
+                android:layout_width="155dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:layout_marginStart="-70dp"
+                android:layout_marginStart="-50dp"
                 android:layout_marginTop="-20dp"
-                android:text="Time left until due date"
-                android:textColor="@android:color/white" />
+                android:text="@string/TimeLeft"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
 
             <Button
                 android:id="@+id/btnSubmit"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="200dp"
+                android:layout_marginTop="220dp"
                 android:background="@color/orange"
-                android:text="Submit"
-                android:textColor="@android:color/white" />
-            />
+                android:text="@string/Submit"
+                android:textColor="@android:color/black" />
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="411dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="120dp">
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="77dp"
-                android:layout_height="40dp"
-                tools:srcCompat="@drawable/project_icon" />
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="77dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                tools:srcCompat="@drawable/dashboard" />
-
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="77dp"
-                android:layout_height="40dp"
-                android:layout_gravity="end"
-                tools:srcCompat="@drawable/settings" />
-        </androidx.cardview.widget.CardView>
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
