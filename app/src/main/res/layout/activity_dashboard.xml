@@ -117,6 +117,7 @@
                 android:orientation="vertical">
 
                 <!-- Work Logo Button -->
+
                 <Button
                     android:id="@+id/btnworklogo"
                     android:layout_width="55dp"
@@ -147,6 +148,7 @@
                     android:drawableStart="@drawable/productivity_ability_talent_productive_svgrepo_com"
                     android:paddingStart="2dp"
                     android:paddingEnd="2dp" />
+
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -169,6 +171,14 @@
             app:cardBackgroundColor="@color/black"
             app:cardCornerRadius="20dp">
 
+            <Button
+                android:id="@+id/pieBtn"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="100dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/pie" />
+
             <EditText
                 android:id="@+id/txtProjectTimeSpent"
                 android:layout_width="wrap_content"
@@ -180,7 +190,7 @@
                 android:hint="@string/Hint2"
                 android:textColor="@android:color/white"
                 android:textColorHint="@color/orangelight"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <EditText
                 android:id="@+id/txtProjectTimeLeft"
@@ -193,7 +203,7 @@
                 android:hint="@string/Hint3"
                 android:textColor="@android:color/white"
                 android:textColorHint="@color/orangelight"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <EditText
                 android:id="@+id/txtProjectName"
@@ -206,7 +216,7 @@
                 android:hint="@string/Hint1"
                 android:textColor="@android:color/white"
                 android:textColorHint="@color/orangelight"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="100dp"
