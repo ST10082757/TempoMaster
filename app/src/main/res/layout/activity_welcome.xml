@@ -48,8 +48,7 @@
             android:background="@drawable/btncircular"
             android:drawableStart="@drawable/work_on_computer_employee_software_engineer_programmer_svgrepo_com"
             android:padding="15dp"
-            android:contentDescription="@string/Work"
-            android:padding="15dp" />
+            android:contentDescription="@string/Work" />
 
         <Button
             android:id="@+id/schoolbtn"
