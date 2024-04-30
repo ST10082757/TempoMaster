@@ -6,15 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/Dark_Grey">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Game"
-        android:layout_gravity="center_horizontal"
-        android:textSize="35dp"
-        android:textColor="@color/white"
-        />
-    <!-- res/layout/fragment_game.xml -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -48,14 +40,23 @@
                 android:background="#0000FF"/>
 
         </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Coloring Game"
+            android:layout_gravity="center_horizontal"
+            android:textSize="35dp"
+            android:textColor="@color/white"
+            />
+      
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="centerInside"
-            android:src="@drawable/tempo_master_logo_trasnparency" />
+            android:src="@drawable/imag6" />
 
     </LinearLayout>
-
 
 </FrameLayout>

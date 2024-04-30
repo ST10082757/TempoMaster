@@ -46,6 +46,11 @@ import androidx.core.app.NotificationCompat
             val intent = Intent(this, AboutActivity::class.java)
             startActivity(intent)
         }
+        // Subscription button
+        binding.subscriptionBtn.setOnClickListener(){
+            val intent = Intent(this,SubscriptionActivity::class.java)
+            startActivity(intent)
+        }
         // Enable edge-to-edge design
         enableEdgeToEdge()
 
