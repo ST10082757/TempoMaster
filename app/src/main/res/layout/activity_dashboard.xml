@@ -189,7 +189,7 @@
                 android:fontFamily="@font/inria_serif_light"
                 android:hint="@string/Hint2"
                 android:textColor="@android:color/white"
-                android:textColorHint="@color/orangelight"
+                android:textColorHint="@color/orangegradient"
                 android:textSize="14sp" />
 
             <EditText
@@ -202,7 +202,7 @@
                 android:fontFamily="@font/inria_serif_light"
                 android:hint="@string/Hint3"
                 android:textColor="@android:color/white"
-                android:textColorHint="@color/orangelight"
+                android:textColorHint="@color/orangegradient"
                 android:textSize="14sp" />
 
             <EditText
@@ -215,7 +215,7 @@
                 android:fontFamily="@font/inria_serif_light"
                 android:hint="@string/Hint1"
                 android:textColor="@android:color/white"
-                android:textColorHint="@color/orangelight"
+                android:textColorHint="@color/orangegradient"
                 android:textSize="14sp" />
 
             <TextView
