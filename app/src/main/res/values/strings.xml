@@ -10,13 +10,23 @@
     <string name="link3">
        Dont have an account?  <a href="https://www.gmail.com"> Sign up</a>
     </string>
- 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Hello"> Hello </string>
+    <string name="Submit"> Submit </string>
+    <string name="Dashboard"> Dashboard </string>
+    <string name="Add"> Add new project: </string>
+    <string name ="Continue"> Continue project: </string>
+    <string name="TimeLeft"> Time left until due date:</string>
+    <string name="Name"> Project name: </string>
+    <string name="TimeSpent"> Total time spent </string>
     <string name="Introduction" > Tempo Master is an application built to track projects progress. To get the best of it less us know more about you. </string>
     <string name="Work"> Work </string>
     <string name="General"> General </string>
     <string name="School"> School </string>
     <string name="Next"> Next </string>
     <string name="WelcomeUser">Hello User! Welcome to Tempo Master . Please select your project category : </string>
+    <string name="Recent"> Recent Project</string>
+    <string name="Hint1">Enter project name</string>
+    <string name="Hint2">Enter time spent</string>
+    <string name="Hint3">Enter time left</string>
 
 </resources>

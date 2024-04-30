@@ -16,5 +16,4 @@
             android:id="@+id/settingsID"
             android:icon="@drawable/baseline_app_settings_alt_24"/>
 
-
 </menu>
