@@ -78,6 +78,12 @@
                     android:src="@drawable/archieve"
                     tools:srcCompat="@drawable/archieve" />
 
+                <Switch
+                    android:id="@+id/switch1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Switch" />
+
                 <ImageButton
                     android:id="@+id/reminderBtn"
                     android:layout_width="match_parent"
@@ -86,6 +92,7 @@
                     android:scaleType="fitEnd"
                     android:src="@drawable/notification"
                     tools:srcCompat="@drawable/notification" />
+
 
                 <ImageButton
                     android:id="@+id/gameBtn"
@@ -119,8 +126,15 @@
                     android:layout_gravity="center_horizontal"
                     android:src="@drawable/tempo_master_logo_trasnparency"
                     app:srcCompat="@drawable/tempo_master_logo_trasnparency" />
-
             </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:padding="8dp"
+                android:layout_margin="8dp"/>
         </ScrollView>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
