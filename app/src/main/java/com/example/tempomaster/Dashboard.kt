@@ -16,8 +16,8 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         //setting the layout
-        setContentView(R.layout.activity_dashboard)
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_dashboard)
 
         //using dataBinding to inflate the activity dashboard on the screen
         val binding = ActivityDashboardBinding.inflate(layoutInflater)
@@ -30,9 +30,15 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
         binding.btnschoolLogo.setOnClickListener(this)
         binding.btngeneralLogo.setOnClickListener(this)
 
-
         //setting the content view
         setContentView(binding.root)
+
+        // Set click listener for gameBtn button using view binding
+        binding.gameBtn.setOnClickListener {
+            // Redirect to the game page
+            val intent = Intent(this, GameActivity::class.java)
+            startActivity(intent)
+        }
 
         //method to bind the values with the buttons
         binding.btnSubmit.setOnClickListener{
