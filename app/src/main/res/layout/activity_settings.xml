@@ -34,7 +34,6 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:layout_margin="10dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
@@ -65,59 +64,78 @@
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/imageButton"
+                    android:id="@+id/focusBtn"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:scaleType="fitEnd"
-                    tools:srcCompat="@drawable/focus" />
+                    android:src="@drawable/focus" />
 
                 <ImageButton
-                    android:id="@+id/imageButton2"
+                    android:id="@+id/archivedBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:scaleType="fitEnd"
+                    android:src="@drawable/archieve"
+                    tools:srcCompat="@drawable/archieve" />
+
+                <Switch
+                    android:id="@+id/switch1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Theme switch" />
+
+                <ImageButton
+                    android:id="@+id/reminderBtn"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_marginTop="10dp"
                     android:scaleType="fitEnd"
+                    android:src="@drawable/notification"
                     tools:srcCompat="@drawable/notification" />
 
                 <ImageButton
-                    android:id="@+id/imageButton3"
+                    android:id="@+id/gameBtn"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:scaleType="fitEnd"
-                    tools:srcCompat="@drawable/archieve" />
-
-                <ImageButton
-                    android:id="@+id/imageButton4"
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:scaleType="fitEnd"
+                    android:src="@drawable/games"
                     tools:srcCompat="@drawable/games" />
 
                 <ImageButton
-                    android:id="@+id/imageButton5"
+                    android:id="@+id/aboutBtn"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:scaleType="fitEnd"
+                    android:src="@drawable/about"
                     tools:srcCompat="@drawable/about" />
 
                 <ImageButton
-                    android:id="@+id/imageButton6"
+                    android:id="@+id/subscriptionBtn"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_marginBottom="10dp"
                     android:scaleType="fitEnd"
+                    android:src="@drawable/subscription"
                     tools:srcCompat="@drawable/subscription" />
 
                 <ImageView
                     android:id="@+id/imageView3"
-                    android:layout_width="267dp"
-                    android:layout_height="260dp"
+                    android:layout_width="400dp"
+                    android:layout_height="400dp"
                     android:layout_gravity="center_horizontal"
+                    android:src="@drawable/tempo_master_logo_trasnparency"
                     app:srcCompat="@drawable/tempo_master_logo_trasnparency" />
-
+                
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:padding="8dp"
+                    android:layout_margin="8dp"/>
             </LinearLayout>
+
         </ScrollView>
-
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
