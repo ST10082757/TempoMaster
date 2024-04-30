@@ -124,7 +124,5 @@
             android:background="@drawable/roundbtnwhite"
             android:text="@string/Next"
             android:textColor="#F15A29" />
-
-
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
