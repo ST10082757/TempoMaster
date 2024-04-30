@@ -29,49 +29,15 @@
     <string name="Hint2">Enter time spent</string>
     <string name="Hint3">Enter time left</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="about">"Tempo Master" is an application designed to help users improve their time management, focus, and productivity. It offers a suite of features aimed at organizing tasks, tracking progress, and maintaining focus while working. Here is an overview of what "Tempo Master" does and how it works:
 
+    <string name="about">"Tempo Master" is an application designed to help users improve their time management,
+        focus, and productivity. It offers a suite of features aimed at organizing tasks, tracking progress,
+        and maintaining focus while working.
+        Here is an overview of what "Tempo Master" does and how it works:
  What is Tempo Master?
-"Tempo Master" is a productivity app that provides users with tools to manage their time efficiently, stay on track with their goals, and enhance their focus. It is suitable for individuals, students, professionals, and anyone seeking to improve their productivity.
-
- Key Features
- 1. Task Management
-"Tempo Master" allows users to create, edit, and manage tasks. Users can categorize tasks, set deadlines, and mark tasks as completed. This feature helps users prioritize their workload and stay organized.
-
- 2. Focus Mode
-Focus mode is designed to minimize distractions and help users concentrate on their tasks. When enabled, it can block notifications, limit access to non-essential apps, and even provide ambient noise or music to aid concentration.
-
-### 3. Progress Tracking
-Users can track their progress over time with visualizations and statistics. This helps users understand where they are spending their time and identify areas for improvement.
-
- 4. Customizable Notifications
-"Tempo Master" offers customizable notifications to remind users about important tasks, deadlines, or focus sessions. Users can set the frequency and timing of these notifications to suit their preferences.
-
- 5. Integrated Timer
-The integrated timer allows users to set specific time intervals for focus sessions, breaks, or other activities. This feature can be used with techniques like Pomodoro to improve time management.
-
- How Does Tempo Master Work?
- Getting Started
-Users can start by creating an account or using the app as a guest. Upon logging in, users can begin setting up their task list and customizing the app's settings according to their preferences.
-
- Creating and Managing Tasks
-Users can create tasks, assign deadlines, and categorize them by priority or other custom labels. The task management interface is designed to be intuitive and easy to use.
-
- Enabling Focus Mode
-Focus mode can be activated to reduce distractions. Users can customize how focus mode works, choosing which notifications to allow or block, and selecting background music or noise to aid concentration.
-
- Tracking Progress
-"Tempo Master" provides tools to track progress. Users can view completed tasks, track focus session history, and analyze time allocation through visual reports and statistics.
-
- Setting Notifications
-Users can set custom notifications for tasks, deadlines, or focus sessions. These notifications help users stay on track and manage their time effectively.
-
- Using the Integrated Timer
-The timer feature allows users to set specific time intervals for focused work or breaks. This can be useful for implementing time management techniques and maintaining productivity throughout the day.
-
- Conclusion
-"Tempo Master" is a comprehensive productivity app designed to help users improve their focus, manage their time, and stay organized. With a combination of task management, focus tools, and progress tracking, users can achieve their productivity goals and make the most of their time.
-
-2024</string>
+"Tempo Master" is a productivity app that provides users with tools to manage their time efficiently,
+        stay on track with their goals, and enhance their focus. It is suitable for individuals, students,
+        professionals, and anyone seeking to improve their productivity.
+</string>
 
 </resources>

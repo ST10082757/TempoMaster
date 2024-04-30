@@ -33,6 +33,8 @@
         <!-- About activity -->
         <activity android:name=".AboutActivity"
                   android:exported="true" />
+        <activity android:name=".SubscriptionActivity"
+                  android:exported="true"/>
         <activity
             android:name=".ExistingProject"
             android:exported="false" />
