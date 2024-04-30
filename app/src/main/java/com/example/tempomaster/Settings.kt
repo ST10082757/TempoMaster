@@ -10,16 +10,19 @@ import com.example.tempomaster.databinding.ActivitySettingsBinding
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
+import android.content.Intent
 import android.os.Build
 import android.graphics.Color
+import android.widget.Button
 import androidx.core.app.NotificationCompat
 
 
-class Settings : AppCompatActivity() {
+ class Settings : AppCompatActivity() {
     // Declaration of the binding variable at the class level
     private lateinit var binding: ActivitySettingsBinding
     // notification channel ID
     private val focusNotificationChannelId ="focus_channel"
+
 
     // Define the fragments to be used in your activity
     private lateinit var dashboard: Fragment
@@ -32,6 +35,13 @@ class Settings : AppCompatActivity() {
         // Initialize the binding
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // setting the click listener for the game button
+        binding.gameBtn.setOnClickListener {
+            val intent = Intent(this, GameActivity::class.java)  // Navigate to GameActivity
+            startActivity(intent)
+        }
+
         // Enable edge-to-edge design
         enableEdgeToEdge()
 
@@ -39,10 +49,9 @@ class Settings : AppCompatActivity() {
         createNotificationChannel(this)
 
         // setting the click listener for focus mode
-        binding.focusBtn.setOnClickListener{
-        showFocusNotification(this)
+        binding.focusBtn.setOnClickListener(){
+            showFocusNotification(this)
         }
-
         // Window insets listener for setting padding based on system bars
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { view, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
