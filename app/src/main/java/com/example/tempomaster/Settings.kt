@@ -41,7 +41,11 @@ import androidx.core.app.NotificationCompat
             val intent = Intent(this, GameActivity::class.java)  // Navigate to GameActivity
             startActivity(intent)
         }
-
+        // Set click listener to navigate to the About page
+        binding.aboutBtn.setOnClickListener {
+            val intent = Intent(this, AboutActivity::class.java)
+            startActivity(intent)
+        }
         // Enable edge-to-edge design
         enableEdgeToEdge()
 
