@@ -1,4 +1,4 @@
-package com.example.tempomaster
+package com.example.tempomaster.com.example.tempomaster
 
 class ProjectCategory
 {
