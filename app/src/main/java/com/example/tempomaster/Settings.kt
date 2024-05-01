@@ -51,6 +51,26 @@ import androidx.core.app.NotificationCompat
             val intent = Intent(this,SubscriptionActivity::class.java)
             startActivity(intent)
         }
+
+        // BottomNavigationView item selection listener for navigation
+        binding.bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.dashboardID -> {
+                    val intent = Intent(this, Dashboard::class.java)  // Navigate to the Dashboard activity
+                    startActivity(intent)
+                }
+                R.id.settingsID -> {
+                    val intent = Intent(this, Settings::class.java)  // Navigate to the Settings activity
+                    startActivity(intent)
+                }
+                R.id.projectID ->{
+                    val intent = Intent(this,ProjectList::class.java) //Navigates to the Project list
+                    startActivity(intent)
+                }
+                else -> false
+            }
+            true
+        }
         // Enable edge-to-edge design
         enableEdgeToEdge()
 
