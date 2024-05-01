@@ -12,7 +12,8 @@ import com.example.tempomaster.databinding.ActivityLoginBinding
 import com.example.tempomaster.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 
-class Login : AppCompatActivity() {
+class
+Login : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private lateinit var firebaseAuth: FirebaseAuth

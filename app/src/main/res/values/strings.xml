@@ -10,4 +10,34 @@
     <string name="link3">
        Dont have an account?  <a href="https://www.gmail.com"> Sign up</a>
     </string>
+    <string name="Hello"> Hello </string>
+    <string name="Submit"> Submit </string>
+    <string name="Dashboard"> Dashboard </string>
+    <string name="Add"> Add new project: </string>
+    <string name="Continue"> Continue project: </string>
+    <string name="TimeLeft"> Time left until due date:</string>
+    <string name="Name"> Project name: </string>
+    <string name="TimeSpent"> Total time spent </string>
+    <string name="Introduction"> Tempo Master is an application built to track projects progress. To get the best of it less us know more about you. </string>
+    <string name="Work"> Work </string>
+    <string name="General"> General </string>
+    <string name="School"> School </string>
+    <string name="Next"> Next </string>
+    <string name="WelcomeUser">Hello User! Welcome to Tempo Master . Please select your project category : </string>
+    <string name="Recent"> Recent Project</string>
+    <string name="Hint1">Enter project name</string>
+    <string name="Hint2">Enter time spent</string>
+    <string name="Hint3">Enter time left</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="about">"Tempo Master" is an application designed to help users improve their time management,
+        focus, and productivity. It offers a suite of features aimed at organizing tasks, tracking progress,
+        and maintaining focus while working.
+        Here is an overview of what "Tempo Master" does and how it works:
+ What is Tempo Master?
+"Tempo Master" is a productivity app that provides users with tools to manage their time efficiently,
+        stay on track with their goals, and enhance their focus. It is suitable for individuals, students,
+        professionals, and anyone seeking to improve their productivity.
+</string>
+
 </resources>
