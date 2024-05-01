@@ -18,33 +18,39 @@ class Welcome : AppCompatActivity() , View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         //setting the layout
         super.onCreate(savedInstanceState)
-
         enableEdgeToEdge()
 
         //binding the welcome page with the welcome screen
         val binding = ActivityWelcomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        setContentView(R.layout.activity_welcome)
+        // Adding click listeners to the buttons
+        binding.workbtn.setOnClickListener(this)
+        binding.schoolbtn.setOnClickListener(this)
+        binding.generalbtn.setOnClickListener(this)
 
         val nextBtn = findViewById<Button>(R.id.btnNext)
         nextBtn.setOnClickListener {
             val intent = Intent(this, Dashboard::class.java)
             startActivity(intent)
         }
-
-        //adding the functionality when user clicks something
-        binding.schoolbtn.setOnClickListener(this)
-        binding.workbtn.setOnClickListener(this)
-        binding.generalbtn.setOnClickListener(this)
     }
+
     override fun onClick(v: View?) {
         // Handle click events for the buttons
         when (v?.id) {
-            R.id.btnwork -> project.projectCategory = "Work"
-            R.id.btnschool -> project.projectCategory = "School"
-            R.id.btngeneral -> project.projectCategory = "General"
+            R.id.workbtn -> {
+                project.projectCategory = "Work"
+                Toast.makeText(this@Welcome, "You have selected: Work", Toast.LENGTH_SHORT).show()
+            }
+            R.id.schoolbtn -> {
+                project.projectCategory = "School"
+                Toast.makeText(this@Welcome, "You have selected: School", Toast.LENGTH_SHORT).show()
+            }
+            R.id.generalbtn -> {
+                project.projectCategory = "General"
+                Toast.makeText(this@Welcome, "You have selected: General", Toast.LENGTH_SHORT).show()
+            }
         }
-        Toast.makeText(this@Welcome, "You have selected :  " + project.projectCategory, Toast.LENGTH_SHORT).show()
-        openIntent(this, project.projectName, Dashboard::class.java)
     }
 }

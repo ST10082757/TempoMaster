@@ -28,8 +28,8 @@ Login : AppCompatActivity() {
 
         val backbtn = findViewById<Button>(R.id.btnBack)
         backbtn.setOnClickListener {
-            val Intent = Intent(this, MainActivity::class.java)
-            startActivity(Intent)
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
 
         }
 
@@ -46,7 +46,7 @@ Login : AppCompatActivity() {
                 firebaseAuth.signInWithEmailAndPassword(email, pass)
                     .addOnCompleteListener {
                         if (it.isSuccessful) {
-                            val intent = Intent(this, Dashboard::class.java)
+                            val intent = Intent(this, Welcome::class.java)
                             startActivity(intent)
                         } else {
                             Toast.makeText(
