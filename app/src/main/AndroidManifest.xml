@@ -42,13 +42,13 @@
         </activity> <!-- Game activity -->
         <activity
             android:name=".GameActivity"
-            android:exported="true" /> <!-- About activity -->
+            android:exported="true" /> 
         <activity
             android:name=".AboutActivity"
             android:exported="true" />
         <activity
             android:name=".SubscriptionActivity"
-            android:exported="true" />
+            android:exported="true" />          
         <activity
             android:name=".ExistingProject"
             android:exported="false" />
