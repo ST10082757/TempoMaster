@@ -1,7 +1,9 @@
 package com.example.tempomaster
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +25,12 @@ class Welcome : AppCompatActivity() , View.OnClickListener {
         val binding = ActivityWelcomeBinding.inflate(layoutInflater)
 
         setContentView(R.layout.activity_welcome)
+
+        val nextBtn = findViewById<Button>(R.id.btnNext)
+        nextBtn.setOnClickListener {
+            val intent = Intent(this, Dashboard::class.java)
+            startActivity(intent)
+        }
 
         //adding the functionality when user clicks something
         binding.schoolbtn.setOnClickListener(this)
