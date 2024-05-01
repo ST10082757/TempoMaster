@@ -10,5 +10,6 @@
     <color name="pieblue">#45629C</color>
     <color name="pieblack">#161616</color>
     <color name="Dark_Grey">#3A3A3A</color>
+    <color name="light_grey">#AEAEAE</color>
 
 </resources>

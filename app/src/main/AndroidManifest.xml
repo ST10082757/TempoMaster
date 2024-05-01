@@ -14,27 +14,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TempoMaster"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ProjectList"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />
-
         <activity
             android:name=".Settings"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <!-- Game activity -->
-        <activity android:name=".GameActivity"
-                  android:exported="true" />
-        <!-- About activity -->
-        <activity android:name=".AboutActivity"
-                  android:exported="true" />
-        <activity android:name=".SubscriptionActivity"
-                  android:exported="true"/>
+        </activity> <!-- Game activity -->
+        <activity
+            android:name=".GameActivity"
+            android:exported="true" /> <!-- About activity -->
+        <activity
+            android:name=".AboutActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SubscriptionActivity"
+            android:exported="true" />
         <activity
             android:name=".ExistingProject"
             android:exported="false" />
@@ -58,4 +61,5 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+
 </manifest>
