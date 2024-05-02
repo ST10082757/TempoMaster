@@ -33,6 +33,7 @@
         <activity
             android:name=".Dashboard"
             android:exported="true" />
+
         <activity
             android:name=".Settings"
             android:exported="true"/>
@@ -49,6 +50,7 @@
         <activity
             android:name=".ExistingProject"
             android:exported="false" />
+
         <activity
             android:name=".AddProject"
             android:exported="false" />
@@ -58,6 +60,7 @@
         <activity
             android:name=".SignUp"
             android:exported="false" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
