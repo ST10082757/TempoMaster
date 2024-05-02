@@ -14,32 +14,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TempoMaster"
         tools:targetApi="31">
+
         <activity
             android:name=".ProjectList"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true" />
-        <activity
             android:name=".Welcome"
-            android:exported="true">
+            android:exported="true" >
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
+
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
-        </activity>
+    </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"/>
         <activity
             android:name=".Dashboard"
             android:exported="true" />
         <activity
             android:name=".Settings"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity> <!-- Game activity -->
+            android:exported="true"/>
+        <!-- Game activity -->
         <activity
             android:name=".GameActivity"
             android:exported="true" /> 
