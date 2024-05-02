@@ -25,6 +25,7 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
         //setting the layout
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
+
 // Retrieve click counts from intent extras
         workClickCount = intent.getIntExtra("workClickCount", 0)
         schoolClickCount = intent.getIntExtra("schoolClickCount", 0)
