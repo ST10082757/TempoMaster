@@ -14,43 +14,42 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TempoMaster"
         tools:targetApi="31">
-
+        <activity
+            android:name=".Goals"
+            android:exported="false" />
         <activity
             android:name=".ProjectList"
             android:exported="false" />
         <activity
             android:name=".Welcome"
-            android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".Dashboard"
             android:exported="true" />
-
         <activity
             android:name=".Settings"
-            android:exported="true"/>
-        <!-- Game activity -->
+            android:exported="true" /> <!-- Game activity -->
         <activity
             android:name=".GameActivity"
-            android:exported="true" /> 
+            android:exported="true" />
         <activity
             android:name=".AboutActivity"
             android:exported="true" />
         <activity
             android:name=".SubscriptionActivity"
-            android:exported="true" />          
+            android:exported="true" />
         <activity
             android:name=".ExistingProject"
             android:exported="false" />
-
         <activity
             android:name=".AddProject"
             android:exported="false" />
