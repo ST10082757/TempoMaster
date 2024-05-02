@@ -2,18 +2,6 @@ package com.example.tempomaster
 
 import android.content.Intent
 import android.os.Bundle
-
-import android.widget.Button
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-
-import androidx.core.view.WindowInsetsCompat
-
-import android.content.Intent
-
-class Dashboard : AppCompatActivity() {
-    var intent = TheIntentHelper()
-
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -63,7 +51,7 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
         binding.btngeneralLogo.setOnClickListener(this)
 
         //setting the content view
-       // setContentView(binding.root)
+        // setContentView(binding.root)
 
         // Set click listener for gameBtn button using view binding
         binding.gameBtn.setOnClickListener {
@@ -110,7 +98,7 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
 
     }
 
-
+    //
     override fun onClick(v: View?) {
         // Handle click events for the buttons
         when (v?.id) {
@@ -168,23 +156,5 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
 
             }
         }
-        // Get a reference to your button
-        val button = findViewById<Button>(R.id.btnschoolLogo)
-        button.setOnClickListener {
-   //using the Intent Helper class
-            intent.startAddProjectActivity(this,AddProject::class.java)
-        }
-        /* Assuming 'button' is your Button view
-        button.setOnClickListener {
-            val intent = Intent(this, AddProject::class.java)
-
-            // Check if conditions to open the activity are met
-            if (/* condition */) {
-                startActivity(intent)
-            } else {
-                Toast.makeText(this, "Error message", Toast.LENGTH_SHORT).show()
-            }
-        }*/
-
     }
-    }
+}
