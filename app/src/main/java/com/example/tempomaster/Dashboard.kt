@@ -98,7 +98,7 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
 
     }
 
-
+//
     override fun onClick(v: View?) {
         // Handle click events for the buttons
         when (v?.id) {
