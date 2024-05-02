@@ -33,7 +33,7 @@
             android:paddingEnd="10dp"
             android:textSize="25sp"
 
-            android:hint= "@string/Name" />
+            android:hint= "@string/Nname" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -115,9 +115,8 @@
 
 
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
 
-    android:orientation="vertical"
-    android:background="@color/backgroundgray"
-    tools:context=".AddProject"/>
 
+
+
+</LinearLayout>
