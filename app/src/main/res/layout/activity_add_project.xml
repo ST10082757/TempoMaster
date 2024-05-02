@@ -115,9 +115,6 @@
 
 
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
 
-    android:orientation="vertical"
-    android:background="@color/backgroundgray"
-    tools:context=".AddProject"/>
 
