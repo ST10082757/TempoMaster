@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.example.tempomaster.com.example.tempomaster.ProjectCategory
 import com.example.tempomaster.databinding.ActivityDashboardBinding
 
@@ -13,8 +14,10 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
     //creating an object for project category class
     var project = ProjectCategory()
 
-    // Declaring clickCount as a class-level property
-    var clickCount = 0
+    // Click counts for each category
+    var workClickCount = 0
+    var schoolClickCount = 0
+    var generalClickCount = 0
 
     lateinit var binding: ActivityDashboardBinding
 
@@ -23,18 +26,21 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
 
+// Retrieve click counts from intent extras
+        workClickCount = intent.getIntExtra("workClickCount", 0)
+        schoolClickCount = intent.getIntExtra("schoolClickCount", 0)
+        generalClickCount = intent.getIntExtra("generalClickCount", 0)
         //using dataBinding to inflate the activity dashboard on the screen
-        binding = ActivityDashboardBinding.inflate(layoutInflater)
 
-        // Retrieve clickCount from intent extras
-        clickCount = intent.getIntExtra("clickCount", 0)
+        val binding = ActivityDashboardBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        // Update click count only for the selected category
-        when(project.projectCategory) {
-            "Work" -> binding.btnwork.text = "Work ($clickCount)"
-            "School" -> binding.btnschool.text = "School ($clickCount)"
-            "General" -> binding.btngeneral.text = "General ($clickCount)"
-        }
+
+        // Set the text of the buttons based on click counts
+        binding.btnwork.text = "Work ($workClickCount)"
+        binding.btnschool.text = "School ($schoolClickCount)"
+        binding.btngeneral.text = "General ($generalClickCount)"
+
 
         // Adding the functionality when the user clicks something
         binding.btnwork.setOnClickListener(this)
@@ -45,7 +51,7 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
         binding.btngeneralLogo.setOnClickListener(this)
 
         //setting the content view
-        setContentView(binding.root)
+        // setContentView(binding.root)
 
         // Set click listener for gameBtn button using view binding
         binding.gameBtn.setOnClickListener {
@@ -72,29 +78,51 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
                 Toast.makeText(this, "Empty fields are not allowed", Toast.LENGTH_SHORT).show()
             }
         }
+
+        // Check initialization of the bottom navigation
+        binding.bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.dashboardID -> { /* Already in Dashboard */ }
+                R.id.settingsID -> {
+                    val intent = Intent(this, Settings::class.java)
+                    startActivity(intent)
+                }
+                R.id.projectID -> {
+                    val intent = Intent(this, ProjectList::class.java)
+                    startActivity(intent)
+                }
+                else -> false
+            }
+            true // Indicate successful handling
+        }
+
     }
 
+    //
     override fun onClick(v: View?) {
         // Handle click events for the buttons
         when (v?.id) {
-            R.id.btnschool -> {
-                project.projectCategory = "School"
-                Toast.makeText(this@Dashboard,"You have ($clickCount) in this category",Toast.LENGTH_SHORT).show()
-                // Redirect user to existing project page
+            R.id.btnwork -> {
+                // Increment click count for Work button
+                workClickCount++
+                binding.btnwork.text = "Work ($workClickCount)"
+                // Redirect user to add existing project page
                 val intent = Intent(this, ExistingProject::class.java)
                 startActivity(intent)
             }
             R.id.btnschool -> {
-                project.projectCategory = "Work"
-                Toast.makeText(this@Dashboard,"You have ($clickCount) in this category",Toast.LENGTH_SHORT).show()
-                // Redirect user to existing project page
+                // Increment click count for School button
+                schoolClickCount++
+                binding.btnschool.text = "School ($schoolClickCount)"
+                // Redirect user to add existing project page
                 val intent = Intent(this, ExistingProject::class.java)
                 startActivity(intent)
             }
-            R.id.btnschool -> {
-                project.projectCategory = "General"
-                Toast.makeText(this@Dashboard,"You have ($clickCount) in this category",Toast.LENGTH_SHORT).show()
-                // Redirect user to existing project page
+            R.id.btngeneral -> {
+                // Increment click count for General button
+                generalClickCount++
+                binding.btngeneral.text = "General ($generalClickCount)"
+                // Redirect user to add existing project page
                 val intent = Intent(this, ExistingProject::class.java)
                 startActivity(intent)
             }
@@ -118,9 +146,14 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
                 project.projectCategory = "General"
                 Toast.makeText(this@Dashboard,"You have added a new General project", Toast.LENGTH_SHORT)
                     .show()
-                // Redirect user to add new project page
-                val intent = Intent(this, AddProject::class.java)
+
+                // Start Dashboard activity and pass click counts
+                val intent = Intent(this, Dashboard::class.java)
+                intent.putExtra("workClickCount", workClickCount)
+                intent.putExtra("schoolClickCount", schoolClickCount)
+                intent.putExtra("generalClickCount", generalClickCount)
                 startActivity(intent)
+
             }
         }
     }
