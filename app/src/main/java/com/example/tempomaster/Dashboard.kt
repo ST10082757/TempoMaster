@@ -14,7 +14,6 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
     //creating an object for project category class
     var project = ProjectCategory()
 
-    // Declaring clickCount as a class-level property
     // Click counts for each category
     var workClickCount = 0
     var schoolClickCount = 0
@@ -26,19 +25,28 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
         //setting the layout
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
-
-        // Retrieve click counts from intent extras
+// Retrieve click counts from intent extras
         workClickCount = intent.getIntExtra("workClickCount", 0)
         schoolClickCount = intent.getIntExtra("schoolClickCount", 0)
         generalClickCount = intent.getIntExtra("generalClickCount", 0)
-
         //using dataBinding to inflate the activity dashboard on the screen
+
+        val binding = ActivityDashboardBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         binding = ActivityDashboardBinding.inflate(layoutInflater)
 
         // Set the text of the buttons based on click counts
         binding.btnwork.text = "Work ($workClickCount)"
         binding.btnschool.text = "School ($schoolClickCount)"
         binding.btngeneral.text = "General ($generalClickCount)"
+
+        // Update click count only for the selected category
+        when(project.projectCategory) {
+            "Work" -> binding.btnwork.text = "Work ($clickCount)"
+            "School" -> binding.btnschool.text = "School ($clickCount)"
+            "General" -> binding.btngeneral.text = "General ($clickCount)"
+        }
 
         // Adding the functionality when the user clicks something
         binding.btnwork.setOnClickListener(this)
@@ -49,7 +57,7 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
         binding.btngeneralLogo.setOnClickListener(this)
 
         //setting the content view
-        setContentView(binding.root)
+       // setContentView(binding.root)
 
         // Set click listener for gameBtn button using view binding
         binding.gameBtn.setOnClickListener {
@@ -76,6 +84,24 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
                 Toast.makeText(this, "Empty fields are not allowed", Toast.LENGTH_SHORT).show()
             }
         }
+
+        // Check initialization of the bottom navigation
+        binding.bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.dashboardID -> { /* Already in Dashboard */ }
+                R.id.settingsID -> {
+                    val intent = Intent(this, Settings::class.java)
+                    startActivity(intent)
+                }
+                R.id.projectID -> {
+                    val intent = Intent(this, ProjectList::class.java)
+                    startActivity(intent)
+                }
+                else -> false
+            }
+            true // Indicate successful handling
+        }
+
     }
 
 

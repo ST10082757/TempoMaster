@@ -7,7 +7,6 @@
     android:background="@color/Dark_Grey"
     tools:context=".ProjectList">
 
-    <!-- A section for the main layout -->
     <FrameLayout
         android:id="@+id/frame_layout"
         android:layout_width="match_parent"
@@ -113,8 +112,8 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="300dp"
-                android:layout_height="183dp"
+                android:layout_width="303dp"
+                android:layout_height="205dp"
                 android:layout_gravity="center"
                 app:cardBackgroundColor="@color/orangegradient"
                 app:cardCornerRadius="20dp">
@@ -130,7 +129,7 @@
                     android:textSize="24sp" />
 
                 <EditText
-                    android:id="@+id/editTextText"
+                    android:id="@+id/projectDescription"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

@@ -38,7 +38,7 @@ class Welcome : AppCompatActivity() , View.OnClickListener {
         val nextBtn = findViewById<Button>(R.id.btnNext)
         nextBtn.setOnClickListener {
             val intent = Intent(this, Dashboard::class.java)
-            intent.putExtra("clickCount",clickCount)  //passing the clickCount value to the dashboard
+            intent.putExtra("clickCount", clickCount)  //passing the clickCount value to the dashboard
             startActivity(intent)
         }
     }
@@ -48,18 +48,21 @@ class Welcome : AppCompatActivity() , View.OnClickListener {
         when (v?.id) {
             R.id.workbtn -> {
                 project.projectCategory = "Work"
-                clickCount++
+                this.clickCount++
                 Toast.makeText(this@Welcome, "You have selected: Work", Toast.LENGTH_SHORT).show()
             }
+
             R.id.schoolbtn -> {
                 project.projectCategory = "School"
-                clickCount++
+                this.clickCount++
                 Toast.makeText(this@Welcome, "You have selected: School", Toast.LENGTH_SHORT).show()
             }
+
             R.id.generalbtn -> {
                 project.projectCategory = "General"
-                clickCount++
-                Toast.makeText(this@Welcome, "You have selected: General", Toast.LENGTH_SHORT).show()
+                this.clickCount++
+                Toast.makeText(this@Welcome, "You have selected: General", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
     }
