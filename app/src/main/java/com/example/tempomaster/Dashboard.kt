@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.example.tempomaster.com.example.tempomaster.ProjectCategory
 import com.example.tempomaster.databinding.ActivityDashboardBinding
 
@@ -22,8 +23,11 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
         //setting the layout
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
-
         //using dataBinding to inflate the activity dashboard on the screen
+
+        val binding = ActivityDashboardBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         binding = ActivityDashboardBinding.inflate(layoutInflater)
 
         // Retrieve clickCount from intent extras
@@ -45,7 +49,7 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
         binding.btngeneralLogo.setOnClickListener(this)
 
         //setting the content view
-        setContentView(binding.root)
+       // setContentView(binding.root)
 
         // Set click listener for gameBtn button using view binding
         binding.gameBtn.setOnClickListener {
@@ -72,6 +76,24 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
                 Toast.makeText(this, "Empty fields are not allowed", Toast.LENGTH_SHORT).show()
             }
         }
+
+        // Check initialization of the bottom navigation
+        binding.bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.dashboardID -> { /* Already in Dashboard */ }
+                R.id.settingsID -> {
+                    val intent = Intent(this, Settings::class.java)
+                    startActivity(intent)
+                }
+                R.id.projectID -> {
+                    val intent = Intent(this, ProjectList::class.java)
+                    startActivity(intent)
+                }
+                else -> false
+            }
+            true // Indicate successful handling
+        }
+
     }
 
     override fun onClick(v: View?) {
