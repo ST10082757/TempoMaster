@@ -29,6 +29,13 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
         // Retrieve clickCount from intent extras
         clickCount = intent.getIntExtra("clickCount", 0)
 
+        // Update click count only for the selected category
+        when(project.projectCategory) {
+            "Work" -> binding.btnwork.text = "Work ($clickCount)"
+            "School" -> binding.btnschool.text = "School ($clickCount)"
+            "General" -> binding.btngeneral.text = "General ($clickCount)"
+        }
+
         // Adding the functionality when the user clicks something
         binding.btnwork.setOnClickListener(this)
         binding.btnschool.setOnClickListener(this)
@@ -70,27 +77,24 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         // Handle click events for the buttons
         when (v?.id) {
-            R.id.btnwork -> {
-                project.projectCategory = "Work"
-                clickCount++
-                binding.btnwork.text = "Work ($clickCount)"
-                // Redirect user to add existing project page
+            R.id.btnschool -> {
+                project.projectCategory = "School"
+                Toast.makeText(this@Dashboard,"You have ($clickCount) in this category",Toast.LENGTH_SHORT).show()
+                // Redirect user to existing project page
                 val intent = Intent(this, ExistingProject::class.java)
                 startActivity(intent)
             }
             R.id.btnschool -> {
-                project.projectCategory = "School"
-                clickCount++
-                binding.btnwork.text = "School ($clickCount)"
-                // Redirect user to add existing project page
+                project.projectCategory = "Work"
+                Toast.makeText(this@Dashboard,"You have ($clickCount) in this category",Toast.LENGTH_SHORT).show()
+                // Redirect user to existing project page
                 val intent = Intent(this, ExistingProject::class.java)
                 startActivity(intent)
             }
-            R.id.btngeneral -> {
+            R.id.btnschool -> {
                 project.projectCategory = "General"
-                clickCount++
-                binding.btnwork.text = "General ($clickCount)"
-                // Redirect user to add existing project page
+                Toast.makeText(this@Dashboard,"You have ($clickCount) in this category",Toast.LENGTH_SHORT).show()
+                // Redirect user to existing project page
                 val intent = Intent(this, ExistingProject::class.java)
                 startActivity(intent)
             }
