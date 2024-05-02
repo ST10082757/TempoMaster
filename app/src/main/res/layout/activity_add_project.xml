@@ -7,4 +7,111 @@
     android:layout_height="match_parent"
     tools:context=".AddProject">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dimGrey"
+        android:orientation="vertical">
+
+        <CalendarView
+            android:id="@+id/projectCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="175dp" />
+        <EditText
+            android:id="@+id/AddProjName"
+            android:layout_width="230dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:ems="10"
+            android:inputType="text"
+            android:gravity= "center"
+            android:layout_marginTop="20dp"
+            android:background="@color/darkGrey"
+            android:textColor="@color/black"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textSize="25sp"
+
+            android:hint= "@string/Name" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="257dp"
+            android:layout_margin="10dp"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="283dp"
+                android:orientation="vertical">
+
+
+                <EditText
+                    android:id="@+id/Descriptiontxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Description"
+                    android:textSize="25sp" />
+
+                <EditText
+                    android:id="@+id/txtstartTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Start_Time"
+
+                    android:textSize="25sp" />
+
+
+                <EditText
+                    android:id="@+id/txtEndTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/End_Time"
+                    android:textSize="25sp" />
+
+                <EditText
+                    android:id="@+id/txtCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Category"
+                    android:textSize="25sp" />
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/cameraBtn"
+            android:layout_width="279dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="@string/camera"
+            android:textColor="@color/black"
+            android:textSize="25sp"/>
+
+        <Button
+            android:id="@+id/clickAddPrj"
+            android:layout_width="279dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@color/darkGrey"
+            android:ems="10"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="@string/Add_Project"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="74dp"
+            tools:srcCompat="@drawable/work_on_computer_employee_software_engineer_programmer_svgrepo_com" />
+
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

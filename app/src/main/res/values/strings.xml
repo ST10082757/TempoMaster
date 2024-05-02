@@ -10,4 +10,18 @@
     <string name="link3">
        Dont have an account?  <a href="https://www.gmail.com"> Sign up</a>
     </string>
+    <string name="Start_Time"> Project Start Time</string>
+    <string name="End_Time">Project End Time</string>
+    <string name="Description">Project Description</string>
+    <string name="Name">Project Name</string>
+    <string name="Category">Project Category</string>
+    <string name="Add_Project">Add Project</string>
+    <string name="Existing">Existing Projects</string>
+    <string name="Project_list">Project List</string>
+    <string name="CardView_ProjectTitle">Project name</string>
+    <string name="View_Button">View</string>
+    <string name="Delete_Button">Delete</string>
+    <string name = "back"> Return to adding a project</string>
+    <string name = "projectList">Project List</string>
+    <string name = "camera">Take A Photo</string>
 </resources>

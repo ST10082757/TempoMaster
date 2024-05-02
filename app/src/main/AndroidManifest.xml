@@ -23,7 +23,8 @@
             android:exported="false" />
         <activity
             android:name=".Dashboard"
-            android:exported="false" />
+            android:exported="true" />
+
         <activity
             android:name=".Welcome"
             android:exported="false" />
@@ -42,6 +43,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
