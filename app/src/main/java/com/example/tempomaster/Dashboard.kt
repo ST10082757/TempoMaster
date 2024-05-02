@@ -34,19 +34,12 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
         val binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding = ActivityDashboardBinding.inflate(layoutInflater)
 
         // Set the text of the buttons based on click counts
         binding.btnwork.text = "Work ($workClickCount)"
         binding.btnschool.text = "School ($schoolClickCount)"
         binding.btngeneral.text = "General ($generalClickCount)"
 
-        // Update click count only for the selected category
-        when(project.projectCategory) {
-            "Work" -> binding.btnwork.text = "Work ($clickCount)"
-            "School" -> binding.btnschool.text = "School ($clickCount)"
-            "General" -> binding.btngeneral.text = "General ($clickCount)"
-        }
 
         // Adding the functionality when the user clicks something
         binding.btnwork.setOnClickListener(this)
