@@ -13,8 +13,13 @@ import com.example.tempomaster.databinding.ActivityWelcomeBinding
 
 
 class Welcome : AppCompatActivity() , View.OnClickListener {
-    //creating project object
+
+    //creating an object for project category class
     var project = ProjectCategory()
+
+    //declaring a counter variable
+    var clickCount = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         //setting the layout
         super.onCreate(savedInstanceState)
@@ -29,9 +34,11 @@ class Welcome : AppCompatActivity() , View.OnClickListener {
         binding.schoolbtn.setOnClickListener(this)
         binding.generalbtn.setOnClickListener(this)
 
+        //setting the button to a listener and redirecting user to next page
         val nextBtn = findViewById<Button>(R.id.btnNext)
         nextBtn.setOnClickListener {
             val intent = Intent(this, Dashboard::class.java)
+            intent.putExtra("clickCount",clickCount)  //passing the clickCount value to the dashboard
             startActivity(intent)
         }
     }
@@ -41,14 +48,17 @@ class Welcome : AppCompatActivity() , View.OnClickListener {
         when (v?.id) {
             R.id.workbtn -> {
                 project.projectCategory = "Work"
+                clickCount++
                 Toast.makeText(this@Welcome, "You have selected: Work", Toast.LENGTH_SHORT).show()
             }
             R.id.schoolbtn -> {
                 project.projectCategory = "School"
+                clickCount++
                 Toast.makeText(this@Welcome, "You have selected: School", Toast.LENGTH_SHORT).show()
             }
             R.id.generalbtn -> {
                 project.projectCategory = "General"
+                clickCount++
                 Toast.makeText(this@Welcome, "You have selected: General", Toast.LENGTH_SHORT).show()
             }
         }
