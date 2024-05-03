@@ -1,45 +1,66 @@
 package com.example.tempomaster
 
+import android.content.Context
+import android.widget.ArrayAdapter
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ListView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class Goals : AppCompatActivity() {
+    private lateinit var minGoalEditText: EditText
+    private lateinit var maxGoalEditText: EditText
+    private lateinit var saveButton: Button
+    private lateinit var backButton: Button
+    private lateinit var listOfGoals: ListView
+    private lateinit var goalAdapter: GoalAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_goals)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
-        val minGoalEditText = findViewById<EditText>(R.id.minGoal)
-        val maxGoalEditText = findViewById<EditText>(R.id.maxGoal)
-        val saveButton = findViewById<Button>(R.id.saveButton)
-        val backButton = findViewById<Button>(R.id.backButton)
+        minGoalEditText = findViewById(R.id.minGoal)
+        maxGoalEditText = findViewById(R.id.maxGoal)
+        saveButton = findViewById(R.id.saveButton)
+        backButton = findViewById(R.id.backButton)
+        listOfGoals = findViewById(R.id.ListOfGoals)
+
+        goalAdapter = GoalAdapter(this)
+        listOfGoals.adapter = goalAdapter
 
         saveButton.setOnClickListener {
             val minGoal = minGoalEditText.text.toString()
             val maxGoal = maxGoalEditText.text.toString()
 
-            // Pass the goals to the next activity (Dashboard)
-            val intent = Intent(this, Dashboard::class.java)
-            intent.putExtra("minGoal", minGoal)
-            intent.putExtra("maxGoal", maxGoal)
-            startActivity(intent)
+            if (minGoal.isNotBlank() && maxGoal.isNotBlank() && minGoal.isNumeric() && maxGoal.isNumeric()) {
+                goalAdapter.addProject("$minGoal - $maxGoal")
+                minGoalEditText.text.clear()
+                maxGoalEditText.text.clear()
+            } else {
+                // Show a toast message if input is invalid
+                Toast.makeText(this, "Please enter valid minimum and maximum goals", Toast.LENGTH_SHORT).show()
+            }
         }
 
         backButton.setOnClickListener {
-            // Navigate back to the dashboard
             val intent = Intent(this, Dashboard::class.java)
             startActivity(intent)
         }
+    }
+
+    // Inner class for the GoalAdapter
+    inner class GoalAdapter(context: Context) : ArrayAdapter<String>(context, android.R.layout.simple_list_item_1) {
+        // Function to add a new project to the list
+        fun addProject(project: String) {
+            add(project)
+            notifyDataSetChanged()
+        }
+    }
+    private fun String.isNumeric(): Boolean {
+        return this.matches("-?\\d+(\\.\\d+)?".toRegex())
     }
 }

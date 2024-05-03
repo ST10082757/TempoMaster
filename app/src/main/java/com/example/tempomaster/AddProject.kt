@@ -1,5 +1,5 @@
 package com.example.tempomaster
-
+import com.example.tempomaster.Goals
 import android.view.View
 import android.view.View.OnClickListener
 import android.content.Intent
@@ -21,7 +21,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 class AddProject : AppCompatActivity() {
     private val requestImageCapture = 1
 
-    private lateinit var resultLauncher:ActivityResultLauncher<Intent> //for photo
+    private lateinit var resultLauncher: ActivityResultLauncher<Intent> //for photo
+
     //Create a new Projects object
     val projects = Projects()
 
@@ -86,8 +87,9 @@ class AddProject : AppCompatActivity() {
                 //using the intent helper to send data to Existing project activity
 
                 intentHelper.startExistingProjectActivity(this, ExistingProject::class.java, bundle)
+
+                }
             }
-        }
 
 //taking a photo using camera intent
 

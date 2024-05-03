@@ -20,8 +20,6 @@ class ExistingProject : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_existing_project)
 
-        // insets
-// the list of projects
         val bundle = intent.extras
         val date = bundle?.getString("Date")
         val projectName = bundle?.getString("Project Name")
@@ -29,18 +27,11 @@ class ExistingProject : AppCompatActivity() {
         val startTime = bundle?.getString("Start Time")
         val endTime = bundle?.getString("End Time")
 
-//displaying the projects in a ListView
         val listOfProjects : ListView = findViewById(R.id.ListOfProjects)
         val projectList = arrayListOf("$projectName, $description, $date, $startTime, $endTime")
-        /*
-        this= referring to the current Activity
-        android.R.layout.simple_list_item_1= This is a built-in layout provided by
-        Android Studio that represents a single item in the list.
-        projectList= This is the data(project details) that the adapter will use to fill the ListView
-         */
-        val adapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,projectList )
-        listOfProjects.adapter = adapter
 
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, projectList)
+        listOfProjects.adapter = adapter
 
         val deleteBtn = findViewById<Button>(R.id.DeleteBtn)
         deleteBtn.setOnClickListener{
@@ -59,7 +50,11 @@ class ExistingProject : AppCompatActivity() {
 
         val  button = findViewById<Button>(R.id.rtnBackBtn)
         button.setOnClickListener{
-            iintent.startAddProjectActivity(this,AddProject::class.java)
+            iintent.startAddProjectActivity(this,Dashboard::class.java)
+        }
+        val  setGoal = findViewById<Button>(R.id.btngoalsetting)
+        setGoal.setOnClickListener{
+            iintent.startAddProjectActivity(this,Goals::class.java)
         }
 
         //for the camera intent
