@@ -31,7 +31,9 @@
     <string name="Add"> Add new project: </string>
     <string name="Continue"> Continue project: </string>
     <string name="TimeLeft"> Time left until due date:</string>
+
     <string name="Nname"> Project name: </string>
+
     <string name="TimeSpent"> Total time spent </string>
     <string name="Introduction"> Tempo Master is an application built to track projects progress. To get the best of it less us know more about you. </string>
     <string name="Work"> Work </string>
