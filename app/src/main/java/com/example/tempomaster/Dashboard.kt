@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.tempomaster.com.example.tempomaster.ProjectCategory
 import com.example.tempomaster.databinding.ActivityDashboardBinding
-
 class Dashboard : AppCompatActivity(), View.OnClickListener {
 
     //creating an object for project category class
@@ -34,6 +33,13 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
         //using dataBinding to inflate the activity dashboard on the screen
          binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        //Project list button
+        binding.projectListBT.setOnClickListener {
+            // Redirect to the game page
+            val intent = Intent(this, ProjectList::class.java)
+            startActivity(intent)
+        }
 
         // Set the text of the buttons based on click counts
         binding.btnwork.text = "Work ($workClickCount)"
