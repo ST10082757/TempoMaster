@@ -16,6 +16,7 @@ import android.os.Build
 import android.graphics.Color
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.NotificationCompat
 
@@ -31,7 +32,7 @@ import androidx.core.app.NotificationCompat
 
      // Define the fragments to be used in your activity
      private lateinit var dashboard: Fragment
-     private lateinit var projectList: Fragment
+     private lateinit var existingProject: Fragment
      private lateinit var settings: Fragment
 
 
@@ -47,7 +48,7 @@ import androidx.core.app.NotificationCompat
          binding.bottomNavigationView.setOnItemSelectedListener { item ->
              when (item.itemId) {
                  R.id.dashboardID -> replaceFragment(dashboard)
-                 R.id.projectID -> replaceFragment(projectList)
+                 R.id.projectID -> replaceFragment(existingProject)
                  else -> false
              }
              true // Indicate successful handling
@@ -62,14 +63,28 @@ import androidx.core.app.NotificationCompat
                      true // Successful handling
                  }
                  R.id.projectID -> {
-                     val intent = Intent(this, ProjectList::class.java)
+                     val intent = Intent(this, ExistingProject::class.java)
                      startActivity(intent)
-                     true // Successful handling
+                     true
                  }
-                 else -> false // Unhandled case
+                 else -> false
              }
          }
+        //-------------------------------BUTTONS CLICK EVENTS------------------------------------//
+         // Displays a toast message when the user clicks on the button
+         binding.archivedBtn.setOnClickListener {
 
+             Toast.makeText(this, "No projects archived", Toast.LENGTH_SHORT).show()
+         }
+            // Reminder button
+         binding.reminderBtn.setOnClickListener {
+             Toast.makeText(this, "Reminder notification is on", Toast.LENGTH_SHORT).show()
+         }
+
+         binding.focusBtn.setOnClickListener {
+
+             Toast.makeText(this, "Focus mode is on", Toast.LENGTH_SHORT).show()
+         }
          val settingspageTitle = binding.settingspageTitle
          //Dark mode switch
          sharedPreferences = getSharedPreferences("ThemePreferences", MODE_PRIVATE)
@@ -172,12 +187,16 @@ import androidx.core.app.NotificationCompat
 
          // Update the UI elements based on dark mode status
          if (isDarkMode) {
-             binding.root.setBackgroundColor(Color.BLACK) // Set background to black
+             // Set background to black
+             binding.root.setBackgroundColor(Color.BLACK)
              // Update text colors to white
-             binding.settingspageTitle.setTextColor(Color.WHITE) // Example TextView
+             binding.settingspageTitle.setTextColor(Color.WHITE)
+             //Updates the switch theme label to white
+             binding.switch1.setTextColor(Color.WHITE)
 
          } else {
-             binding.root.setBackgroundColor(Color.WHITE) // Set background to white
+             // Set background to white
+             binding.root.setBackgroundColor(Color.WHITE)
              // Update text colors to black
              binding.settingspageTitle.setTextColor(Color.BLACK)
          }

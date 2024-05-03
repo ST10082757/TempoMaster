@@ -86,7 +86,7 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
                     startActivity(intent)
                 }
                 R.id.projectID -> {
-                    val intent = Intent(this, ProjectList::class.java)
+                    val intent = Intent(this, ExistingProject::class.java)
                     startActivity(intent)
                 }
                 else -> false
