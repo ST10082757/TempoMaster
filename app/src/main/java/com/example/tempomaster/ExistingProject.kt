@@ -12,18 +12,21 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.graphics.Bitmap
 import android.widget.ImageView
-import com.example.tempomaster.databinding.ActivityDashboardBinding
+import com.example.tempomaster.databinding.ActivityExistingProjectBinding
+
 
 class ExistingProject : AppCompatActivity() {
     private var iintent = TheIntentHelper()
 
-    lateinit var binding: ActivityDashboardBinding
-
+    private lateinit var binding: ActivityExistingProjectBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_existing_project)
+
+        binding = ActivityExistingProjectBinding.inflate(layoutInflater) // Correct binding
+        setContentView(binding.root)
 
         //ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             //val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -49,20 +52,6 @@ class ExistingProject : AppCompatActivity() {
                 val adapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,projectList )
                 listOfProjects.adapter = adapter
 
-
-        val bundle = intent.extras
-        val date = bundle?.getString("Date")
-        val projectName = bundle?.getString("Project Name")
-        val description = bundle?.getString("Description")
-        val startTime = bundle?.getString("Start Time")
-        val endTime = bundle?.getString("End Time")
-
-        val listOfProjects : ListView = findViewById(R.id.ListOfProjects)
-        val projectList = arrayListOf("$projectName, $description, $date, $startTime, $endTime")
-
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, projectList)
-        listOfProjects.adapter = adapter
-
         val deleteBtn = findViewById<Button>(R.id.DeleteBtn)
         deleteBtn.setOnClickListener{
             //based on what is chosen
@@ -81,7 +70,8 @@ class ExistingProject : AppCompatActivity() {
         // Check initialization of the bottom navigation
         binding.bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.dashboardID -> {val intent = Intent(this, Dashboard::class.java)
+                R.id.dashboardID -> {
+                    val intent = Intent(this, Dashboard::class.java)
                     startActivity(intent)
                 }
                 R.id.settingsID -> {
@@ -92,7 +82,11 @@ class ExistingProject : AppCompatActivity() {
                     val intent = Intent(this, ExistingProject::class.java)
                     startActivity(intent)
                 }
-                else -> false
+                R.id.projectID -> {
+                    val intent = Intent(this, ExistingProject::class.java)
+                    startActivity(intent)
+                }
+                else -> false // Unhandled case
             }
             true // Indicate successful handling
         }
