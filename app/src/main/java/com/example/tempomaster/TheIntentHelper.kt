@@ -11,12 +11,12 @@ class TheIntentHelper {
         intent.putExtras(bundle)
         context.startActivity(intent)
     }
-
+    //----------------------------------------------------------------------------------------------
     fun openIntent(context: Context, aProject: String, activityToOpen: Class<*>) {
         val intent = Intent(context, activityToOpen)
         context.startActivity(intent)
     }
-
+    //----------------------------------------------------------------------------------------------
     public fun startAddProjectActivity(
         context: Context,
         Projects: String,
@@ -27,7 +27,7 @@ class TheIntentHelper {
         intent.putExtras(bundle)
         context.startActivity(intent)
     }
-
+    //----------------------------------------------------------------------------------------------
     /*
     overloaded shareIntent() method. This method accepts all
 the same parameters as the
@@ -51,8 +51,8 @@ the same parameters as the
         var shareIntent = Intent.createChooser(sendIntent, null,)
         context.startActivity(sendIntent)
     }
-
-
+    
+    //----------------------------------------------------------------------------------------------
     companion object {
         fun startAddProjectActivity(
             context: Context,
@@ -63,8 +63,8 @@ the same parameters as the
             context.startActivity(intent)
         }
     }
-
-
+    
+    //----------------------------------------------------------------------------------------------
     fun startExistingProjectActivity(context: Context, cls: Class<*>, bundle: Bundle) {
         val intent = Intent(context, cls)
         intent.putExtras(bundle)
@@ -72,9 +72,11 @@ the same parameters as the
 
 
     }
+    //----------------------------------------------------------------------------------------------
     fun startingExistingProjectActivity (context: Context, cls:Class<*>)
     {
-        // Set up a click listener for your button
+        // Set up a click listener for the button
+        //please ignore this method, the next activity is used
 
         // Create an Intent to start SecondActivity
         val intent = Intent(context, cls)
@@ -82,11 +84,11 @@ the same parameters as the
         // Start SecondActivity
         context.startActivity(intent)
     }
-
-
+    
+    //----------------------------------------------------------------------------------------------
     fun startAddProjectActivity(context: Context, cls:Class<*>)
     {
-        // Set up a click listener for your button
+        // Set up a click listener for the  button
 
             // Create an Intent to start SecondActivity
             val intent = Intent(context, cls)

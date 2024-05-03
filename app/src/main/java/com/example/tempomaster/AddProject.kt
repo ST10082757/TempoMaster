@@ -38,7 +38,7 @@ class AddProject : AppCompatActivity() {
         // val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
         // v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
         //insets
-        // Get references to your input fields
+        
         //val dateInput = findViewById<EditText>(R.id.txtDate)
 
         calendarView = findViewById(R.id.projectCalendar)
@@ -52,12 +52,12 @@ class AddProject : AppCompatActivity() {
             val endTimeInput = findViewById<EditText>(R.id.txtEndTime)
             val category = findViewById<EditText>(R.id.txtCategory)
 //----------------------------------------------------------------------------------------------
-            /*
+    /*
         /after the button click(below), we are getting and setting
-        the input values to their fields accoridng to the
+        the input values to their fields according to the
         Projects object. The bundle will help display the into
         into the Existing projects activity
-         */
+ */
             // Get reference to your button
             val clickToAddProj = findViewById<Button>(R.id.clickAddPrj)
 
@@ -90,6 +90,7 @@ class AddProject : AppCompatActivity() {
             startActivity(intent)
 
         }*/
+//----------------------------------------------------------------------------------------------
 //taking a photo using camera intent
 
         resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -101,8 +102,9 @@ class AddProject : AppCompatActivity() {
                 startActivity(intent)
             }
         }
-
-        //camera button click for photo capture
+        
+//camera button click for photo capture
+        
         val camButton = findViewById<Button>(R.id.cameraBtn)
         camButton.setOnClickListener {
             Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->

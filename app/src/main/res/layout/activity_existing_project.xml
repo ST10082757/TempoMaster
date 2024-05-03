@@ -23,7 +23,8 @@
             android:text="@string/Existing"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="35sp"/>
+            android:textSize="35sp"
+            android:importantForAutofill="no" />
 
         <Space
             android:layout_width="match_parent"

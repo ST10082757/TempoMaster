@@ -17,33 +17,35 @@
         <CalendarView
             android:id="@+id/projectCalendar"
             android:layout_width="match_parent"
-            android:layout_height="175dp" />
+            android:layout_height="212dp" />
+
         <EditText
             android:id="@+id/AddProjName"
             android:layout_width="230dp"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:layout_gravity="center_horizontal"
-            android:ems="10"
-            android:inputType="text"
-            android:gravity= "center"
             android:layout_marginTop="20dp"
             android:background="@color/darkGrey"
-            android:textColor="@color/black"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/Nname"
+            android:inputType="text"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:textSize="25sp"
+            android:textColor="@color/black"
 
-            android:hint= "@string/Nname" />
+            android:textSize="25sp"
+            android:autofillHints="" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="257dp"
+            android:layout_height="247dp"
             android:layout_margin="10dp"
             android:background="@color/white">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="283dp"
+                android:layout_height="232dp"
                 android:orientation="vertical">
 
 
@@ -52,15 +54,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/Description"
-                    android:textSize="25sp" />
+                    android:textSize="25sp"
+                    android:autofillHints=""
+                    android:inputType="" />
 
                 <EditText
                     android:id="@+id/txtstartTime"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/Start_Time"
-
-                    android:textSize="25sp" />
+                    android:textSize="25sp"
+                    android:autofillHints=""
+                    android:inputType="" />
 
 
                 <EditText
@@ -68,14 +73,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/End_Time"
-                    android:textSize="25sp" />
+                    android:textSize="25sp"
+                    android:autofillHints=""
+                    android:inputType="" />
 
                 <EditText
                     android:id="@+id/txtCategory"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/Category"
-                    android:textSize="25sp" />
+                    android:textSize="25sp"
+                    android:autofillHints=""
+                    android:inputType="" />
 
 
             </LinearLayout>
@@ -90,7 +99,7 @@
             android:layout_marginTop="20dp"
             android:text="@string/camera"
             android:textColor="@color/black"
-            android:textSize="25sp"/>
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/clickAddPrj"
@@ -111,7 +120,8 @@
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
             android:layout_height="74dp"
-            tools:srcCompat="@drawable/work_on_computer_employee_software_engineer_programmer_svgrepo_com" />
+            tools:srcCompat="@drawable/work_on_computer_employee_software_engineer_programmer_svgrepo_com"
+            android:contentDescription="@string/about" />
 
 
     </LinearLayout>
