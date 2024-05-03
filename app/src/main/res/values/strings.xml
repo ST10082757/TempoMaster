@@ -22,7 +22,7 @@
     <string name="CardView_ProjectTitle">Project name</string>
     <string name="View_Button">View</string>
     <string name="Delete_Button">Delete</string>
-    <string name="back"> Return to adding a project</string>
+    <string name="Back"> Return </string>
     <string name="projectList">Project List</string>
     <string name="camera">Take A Photo</string>
     <string name="Hello"> Hello </string>

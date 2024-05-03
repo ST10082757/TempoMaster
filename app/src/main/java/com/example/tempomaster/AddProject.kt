@@ -19,7 +19,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 
 
 class AddProject : AppCompatActivity() {
-
     private val requestImageCapture = 1
 
     private lateinit var resultLauncher:ActivityResultLauncher<Intent> //for photo
@@ -34,13 +33,19 @@ class AddProject : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_add_project)
 
-        //ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-        // val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-        // v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-        //insets
-        // Get references to your input fields
-        //val dateInput = findViewById<EditText>(R.id.txtDate)
+        // Get a reference to the back button
+        val backButton = findViewById<Button>(R.id.backclick)
 
+        // Set an OnClickListener for the back button
+        backButton.setOnClickListener {
+            // Create an Intent to navigate back to the Dashboard activity
+            val intent = Intent(this, Dashboard::class.java)
+            // Start the Dashboard activity
+            startActivity(intent)
+            // Finish the current activity to remove it from the back stack
+            finish()
+        }
+        //calender view
         calendarView = findViewById(R.id.projectCalendar)
         calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
             val DateSelected = "$dayOfMonth-${month + 1}-$year"
@@ -79,17 +84,11 @@ class AddProject : AppCompatActivity() {
                 bundle.putString("Start Time", startTime)
                 bundle.putString("End Time", endTime)
                 //using the intent helper to send data to Existing project activity
-                //
+
                 intentHelper.startExistingProjectActivity(this, ExistingProject::class.java, bundle)
-                // intentHelper.startingExistingProjectActivity(this, ExistingProject::class.java)
             }
         }
-       /* val fab = findViewById<FloatingActionButton>(R.id.fab_ViewProjects)
-        fab.setOnClickListener {
-            val intent = Intent(this, ExistingProject::class.java)
-            startActivity(intent)
 
-        }*/
 //taking a photo using camera intent
 
         resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -113,5 +112,3 @@ class AddProject : AppCompatActivity() {
         }
     }
 }
-
-
