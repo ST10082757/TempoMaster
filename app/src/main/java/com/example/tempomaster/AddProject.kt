@@ -16,6 +16,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.util.*
 import android.app.Activity
 import androidx.activity.result.contract.ActivityResultContracts
+import com.example.tempomaster.databinding.ActivityAddProjectBinding
 
 
 class AddProject : AppCompatActivity() {
@@ -25,6 +26,8 @@ class AddProject : AppCompatActivity() {
 
     //Create a new Projects object
     val projects = Projects()
+    // declaring biding
+    lateinit var binding: ActivityAddProjectBinding
 
     private lateinit var calendarView: CalendarView
 
@@ -34,6 +37,9 @@ class AddProject : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_add_project)
 
+        // initializing binsding
+        binding = ActivityAddProjectBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         // Get a reference to the back button
         val backButton = findViewById<Button>(R.id.backclick)
 
@@ -57,6 +63,25 @@ class AddProject : AppCompatActivity() {
             val startTimeInput = findViewById<EditText>(R.id.txtstartTime)
             val endTimeInput = findViewById<EditText>(R.id.txtEndTime)
             val category = findViewById<EditText>(R.id.txtCategory)
+
+            //---------------------------NAVIGATION BAR---------------------------------//
+            // Check initialization of the bottom navigation
+            binding.bottomNavigationView.setOnItemSelectedListener { item ->
+                when (item.itemId) {
+                    R.id.dashboardID -> {  val intent = Intent(this, Dashboard::class.java)
+                        startActivity(intent) }
+                    R.id.settingsID -> {
+                        val intent = Intent(this, Settings::class.java)
+                        startActivity(intent)
+                    }
+                    R.id.projectID -> {
+                        val intent = Intent(this, ExistingProject::class.java)
+                        startActivity(intent)
+                    }
+                    else -> false
+                }
+                true // Indicate successful handling
+            }
 //----------------------------------------------------------------------------------------------
             /*
         /after the button click(below), we are getting and setting

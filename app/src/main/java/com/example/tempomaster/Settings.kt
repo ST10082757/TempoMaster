@@ -60,7 +60,7 @@ import androidx.core.app.NotificationCompat
                  R.id.dashboardID -> {
                      val intent = Intent(this, Dashboard::class.java)
                      startActivity(intent)
-                     true // Successful handling
+                     true
                  }
                  R.id.projectID -> {
                      val intent = Intent(this, ExistingProject::class.java)
@@ -70,7 +70,7 @@ import androidx.core.app.NotificationCompat
                  else -> false
              }
          }
-        //-------------------------------BUTTONS CLICK EVENTS------------------------------------//
+         //-------------------------------BUTTONS CLICK EVENTS------------------------------------//
          // Displays a toast message when the user clicks on the button
          binding.archivedBtn.setOnClickListener {
 
