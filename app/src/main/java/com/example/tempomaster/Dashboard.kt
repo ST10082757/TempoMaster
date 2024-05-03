@@ -26,7 +26,7 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
 
-// Retrieve click counts from intent extras
+        // Retrieve click counts from intent extras
         workClickCount = intent.getIntExtra("workClickCount", 0)
         schoolClickCount = intent.getIntExtra("schoolClickCount", 0)
         generalClickCount = intent.getIntExtra("generalClickCount", 0)
@@ -88,7 +88,7 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
                     startActivity(intent)
                 }
                 R.id.projectID -> {
-                    val intent = Intent(this, ProjectList::class.java)
+                    val intent = Intent(this, ExistingProject::class.java)
                     startActivity(intent)
                 }
                 else -> false

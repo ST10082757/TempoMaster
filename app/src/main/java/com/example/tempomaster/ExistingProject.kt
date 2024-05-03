@@ -1,5 +1,6 @@
 package com.example.tempomaster
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -11,11 +12,12 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.graphics.Bitmap
 import android.widget.ImageView
+import com.example.tempomaster.databinding.ActivityDashboardBinding
 
 class ExistingProject : AppCompatActivity() {
     private var iintent = TheIntentHelper()
 
-
+    lateinit var binding: ActivityDashboardBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +28,7 @@ class ExistingProject : AppCompatActivity() {
             //val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
            // v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
            // insets
-// the list of projects
+            // the list of projects
             val bundle = intent.extras
             val date = bundle?.getString("Date")
             val projectName = bundle?.getString("Project Name")
@@ -34,7 +36,7 @@ class ExistingProject : AppCompatActivity() {
             val startTime = bundle?.getString("Start Time")
             val endTime = bundle?.getString("End Time")
 
-//displaying the projects in a ListView
+            //displaying the projects in a ListView
             val listOfProjects : ListView = findViewById(R.id.ListOfProjects)
                 val projectList = arrayListOf("$projectName, $description, $date, $startTime, $endTime")
     /*
@@ -61,6 +63,25 @@ class ExistingProject : AppCompatActivity() {
             }
 
         }
+        //----------------------------------NAVIGATION BAR-----------------------------------------//
+        // Check initialization of the bottom navigation
+        binding.bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.dashboardID -> {val intent = Intent(this, Dashboard::class.java)
+                    startActivity(intent)
+                }
+                R.id.settingsID -> {
+                    val intent = Intent(this, Settings::class.java)
+                    startActivity(intent)
+                }
+                R.id.projectID -> {
+                    val intent = Intent(this, ExistingProject::class.java)
+                    startActivity(intent)
+                }
+                else -> false
+            }
+            true // Indicate successful handling
+        }
 
         val  button = findViewById<Button>(R.id.rtnBackBtn)
         button.setOnClickListener{
@@ -72,5 +93,6 @@ class ExistingProject : AppCompatActivity() {
         val bitmap = intent.getParcelableExtra<Bitmap>("ProjectImage")
         image.setImageBitmap(bitmap)
         }
+
     }
 

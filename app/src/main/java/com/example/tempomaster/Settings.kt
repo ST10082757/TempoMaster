@@ -32,7 +32,7 @@ import androidx.core.app.NotificationCompat
 
      // Define the fragments to be used in your activity
      private lateinit var dashboard: Fragment
-     private lateinit var projectList: Fragment
+     private lateinit var existingProject: Fragment
      private lateinit var settings: Fragment
 
 
@@ -48,7 +48,7 @@ import androidx.core.app.NotificationCompat
          binding.bottomNavigationView.setOnItemSelectedListener { item ->
              when (item.itemId) {
                  R.id.dashboardID -> replaceFragment(dashboard)
-                 R.id.projectID -> replaceFragment(projectList)
+                 R.id.projectID -> replaceFragment(existingProject)
                  else -> false
              }
              true // Indicate successful handling
@@ -63,14 +63,14 @@ import androidx.core.app.NotificationCompat
                      true // Successful handling
                  }
                  R.id.projectID -> {
-                     val intent = Intent(this, ProjectList::class.java)
+                     val intent = Intent(this, ExistingProject::class.java)
                      startActivity(intent)
-                     true // Successful handling
+                     true
                  }
-                 else -> false // Unhandled case
+                 else -> false
              }
          }
-//--------------------------------BUTTONS CLICK EVENTS---------------------------------------//
+        //-------------------------------BUTTONS CLICK EVENTS------------------------------------//
          // Displays a toast message when the user clicks on the button
          binding.archivedBtn.setOnClickListener {
 
