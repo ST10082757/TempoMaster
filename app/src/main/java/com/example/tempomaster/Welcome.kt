@@ -35,16 +35,22 @@ class Welcome : AppCompatActivity() , View.OnClickListener {
         binding.generalbtn.setOnClickListener(this)
 
         //setting the button to a listener and redirecting user to next page
-        val nextBtn = findViewById<Button>(R.id.btnNext)
-        nextBtn.setOnClickListener {
-            val intent = Intent(this, Dashboard::class.java)
-            intent.putExtra("clickCount", clickCount)  //passing the clickCount value to the dashboard
-            startActivity(intent)
+        binding.btnNext.setOnClickListener {
+            if (clickCount == 0) {
+                // Show a toast indicating the user has not made a selection
+                Toast.makeText(this@Welcome, "Please select a category", Toast.LENGTH_SHORT).show()
+            } else {
+                val intent = Intent(this, Dashboard::class.java)
+                intent.putExtra("workClickCount", if (project.projectCategory == "Work") 1 else 0)
+                intent.putExtra("schoolClickCount", if (project.projectCategory == "School") 1 else 0)
+                intent.putExtra("generalClickCount", if (project.projectCategory == "General") 1 else 0)
+                startActivity(intent)
+            }
         }
     }
 
+
     override fun onClick(v: View?) {
-        // Handle click events for the buttons
         when (v?.id) {
             R.id.workbtn -> {
                 project.projectCategory = "Work"
