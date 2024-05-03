@@ -16,6 +16,7 @@ import android.os.Build
 import android.graphics.Color
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.NotificationCompat
 
@@ -69,7 +70,21 @@ import androidx.core.app.NotificationCompat
                  else -> false // Unhandled case
              }
          }
+//--------------------------------BUTTONS CLICK EVENTS---------------------------------------//
+         // Displays a toast message when the user clicks on the button
+         binding.archivedBtn.setOnClickListener {
 
+             Toast.makeText(this, "No projects archived", Toast.LENGTH_SHORT).show()
+         }
+            // Reminder button
+         binding.reminderBtn.setOnClickListener {
+             Toast.makeText(this, "Reminder notification is on", Toast.LENGTH_SHORT).show()
+         }
+
+         binding.focusBtn.setOnClickListener {
+
+             Toast.makeText(this, "Focus mode is on", Toast.LENGTH_SHORT).show()
+         }
          val settingspageTitle = binding.settingspageTitle
          //Dark mode switch
          sharedPreferences = getSharedPreferences("ThemePreferences", MODE_PRIVATE)
@@ -172,12 +187,16 @@ import androidx.core.app.NotificationCompat
 
          // Update the UI elements based on dark mode status
          if (isDarkMode) {
-             binding.root.setBackgroundColor(Color.BLACK) // Set background to black
+             // Set background to black
+             binding.root.setBackgroundColor(Color.BLACK)
              // Update text colors to white
-             binding.settingspageTitle.setTextColor(Color.WHITE) // Example TextView
+             binding.settingspageTitle.setTextColor(Color.WHITE)
+             //Updates the switch theme label to white
+             binding.switch1.setTextColor(Color.WHITE)
 
          } else {
-             binding.root.setBackgroundColor(Color.WHITE) // Set background to white
+             // Set background to white
+             binding.root.setBackgroundColor(Color.WHITE)
              // Update text colors to black
              binding.settingspageTitle.setTextColor(Color.BLACK)
          }
