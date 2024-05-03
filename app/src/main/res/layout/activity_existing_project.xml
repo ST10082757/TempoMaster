@@ -103,7 +103,13 @@
                 android:id="@+id/rtnBackBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/back" />
+                android:text="@string/Back" />
+            <Button
+                android:id="@+id/btngoalsetting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/goal" />
+
 
         </LinearLayout>
 
