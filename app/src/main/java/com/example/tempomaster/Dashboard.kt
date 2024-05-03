@@ -30,17 +30,18 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
         workClickCount = intent.getIntExtra("workClickCount", 0)
         schoolClickCount = intent.getIntExtra("schoolClickCount", 0)
         generalClickCount = intent.getIntExtra("generalClickCount", 0)
+
         //using dataBinding to inflate the activity dashboard on the screen
-
-        val binding = ActivityDashboardBinding.inflate(layoutInflater)
+         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
         // Set the text of the buttons based on click counts
         binding.btnwork.text = "Work ($workClickCount)"
         binding.btnschool.text = "School ($schoolClickCount)"
         binding.btngeneral.text = "General ($generalClickCount)"
-
+        binding.btnworklogo.text = "Work ($workClickCount)"
+        binding.btngeneralLogo.text = "General ($generalClickCount)"
+        binding.btnschoolLogo.text =  "School ($schoolClickCount)"
 
         // Adding the functionality when the user clicks something
         binding.btnwork.setOnClickListener(this)
@@ -49,9 +50,6 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
         binding.btnworklogo.setOnClickListener(this)
         binding.btnschoolLogo.setOnClickListener(this)
         binding.btngeneralLogo.setOnClickListener(this)
-
-        //setting the content view
-        // setContentView(binding.root)
 
         // Set click listener for gameBtn button using view binding
         binding.gameBtn.setOnClickListener {
@@ -98,7 +96,7 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
 
     }
 
-    //
+
     override fun onClick(v: View?) {
         // Handle click events for the buttons
         when (v?.id) {
@@ -126,7 +124,15 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
                 val intent = Intent(this, ExistingProject::class.java)
                 startActivity(intent)
             }
+            // Remove the lines below for other cases
+            R.id.btnschoolLogo, R.id.btnworklogo, R.id.btngeneralLogo -> {
+                // Handle logo button clicks
+                // Redirect user to add new project page
+                val intent = Intent(this, AddProject::class.java)
+                startActivity(intent)
+            }
             R.id.btnschoolLogo -> {
+                schoolClickCount++
                 project.projectCategory = "School"
                 Toast.makeText(this@Dashboard,"You have added a new School project", Toast.LENGTH_SHORT)
                     .show()
@@ -135,6 +141,7 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
             }
             R.id.btnworklogo -> {
+                workClickCount++
                 project.projectCategory = "Work"
                 Toast.makeText(this@Dashboard,"You have added a new Work project", Toast.LENGTH_SHORT)
                     .show()
@@ -143,6 +150,7 @@ class Dashboard : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
             }
             R.id.btngeneralLogo -> {
+                generalClickCount++
                 project.projectCategory = "General"
                 Toast.makeText(this@Dashboard,"You have added a new General project", Toast.LENGTH_SHORT)
                     .show()
