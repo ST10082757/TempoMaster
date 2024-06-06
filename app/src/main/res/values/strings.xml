@@ -18,7 +18,7 @@
     <string name="Category">Project Category</string>
     <string name="Add_Project">Add Project</string>
     <string name="Existing">Existing Projects</string>
-    <string name="Project_list">Project List</string>
+    <string name="Project_list">Project Name:</string>
     <string name="CardView_ProjectTitle">Project name</string>
     <string name="View_Button">View</string>
     <string name="Delete_Button">Delete</string>
